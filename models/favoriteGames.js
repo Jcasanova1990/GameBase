@@ -6,9 +6,9 @@ const favoriteGamesSchema = new mongoose.Schema ({
     title: { type: String, required: true },
     genre: { type: String, required: true },
     platform: { type: String, required: true },
-    release_year: {type: Number},
-    created_at: {type: Date, default: Date.now},
-    updated_at: {type: Date, default: Date.now}
+    release_year: { type: Number, required: true },
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date, default: Date.now }
 })
 
 favoriteGamesSchema.methods.generateAuthToken = async function(next) {
