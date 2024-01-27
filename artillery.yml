@@ -1,0 +1,23 @@
+config:
+  target: 'http://localhost:3005'
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - flow:
+      - post:
+          url: "/users"
+          json:
+            name: "Test"
+            email: "test@example.com"
+            password: "Password123"
+            created_at: null
+            updated_at: null
+
+          url: "/favoriteGames"
+           title: { type: String, required: true },
+           genre: { type: String, required: true },
+           platform: { type: String, required: true },
+           release_year: { type: Number, required: true }
+           created_at: null
+           updated_at: null

@@ -1,5 +1,5 @@
-const FavoriteGame = require('../models/favoriteGame')
-const User = require('../models/user')
+const FavoriteGame = require('../models/favoriteGames')
+
 
 exports.IndexGames = async (req, res) => {
   try {
