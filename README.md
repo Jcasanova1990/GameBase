@@ -12,13 +12,13 @@ Step 4:
 Then type code . to open VSCODE 
 
 Step 5: 
-remove current node modules Then add MONGO_URI and SECRET=Hash password to .env file. Then in your .gitignore file type node_modules and .env to hide current files.
+ Add MONGO_URI and SECRET=Hash password to .env file. Then in your .gitignore file type node_modules and .env to hide current files.
 
 Step 6:
 npm i to install all packages in package.json, then npm run test to test everything 
 
 Step 7:
-Create a github repository then follow git steps to addremote/add-A/commit to -m/push -u 
+git init then create a repository on git hub then Create a github repository then follow git steps to addremote/add-A/commit to -m/push -u 
 
 
 
