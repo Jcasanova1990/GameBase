@@ -1,22 +1,26 @@
-Step 1: Open terminal mkdir then cd into created folder.
+Step 1: 
+Open terminal mkdir then cd into created folder.
 
 Step 2:
 In your terminal copy/paste 
 git clone https://github.com/Jcasanova1990/Users_FavGames_API.git ---Then hit enter.
 
 Step 3: 
-touch gitignore .env 
+Then cd into cloned folder, then touch gitignore  and .env 
 
-Step 2:
+Step 4: 
+Then type code . to open VSCODE 
 
-Step 2:
+Step 5: 
+Then add MONGO_URI and SECRET=Hash password to .env file. Then in your .gitignore file type node_modules and .env to hide current files.
 
-Step 2:
+Step 6:
+npm i to install all packages in package.json, then npm run test to test everything 
 
-Step 2:
+Step 7:
+Create a github repository then follow git steps to addremote/add-A/commit to -m/push -u 
 
-Step 2:
 
-Step 2:
 
-Step 2:
+                                                        ----IMPORTANT----
+        "THIS GIT USES BCRYPTJS AND DOES NOT USE MONGODBMEMORYSERVER IF ADDED TO MONGODB IT WILL SEND ALL TEST FILES THERE"
