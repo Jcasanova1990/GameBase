@@ -1,12 +1,12 @@
 const request = require('supertest')
 const mongoose = require('mongoose')
 const app = require('../app')
-const User = require('../models/user')
+const User = require('../models/users')
 
 let server
 
 beforeAll(async () => {
-    server = app.listen(8080, () => console.log('Testing on PORT 8080'));
+    server = app.listen(8081, () => console.log('Testing on PORT 8081'));
     await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 })
 
@@ -70,7 +70,7 @@ describe('Test the users endpoints', () => {
             .send({ name: 'jane doe', email: 'jane.doe@test.com' })
 
         expect(response.statusCode).toBe(200)
-        expect(response.body.name).toEqual('jane Doe')
+        expect(response.body.name).toEqual('jane doe')
         expect(response.body.email).toEqual('jane.doe@test.com')
     })
 

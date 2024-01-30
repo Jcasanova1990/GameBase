@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 exports.auth = async (req, res, next) => {
   try {
     const token = req.header('Authorization').replace('Bearer ', '')
-    const data = jwt.verify(token, 'secret')
+    const data = jwt.verify(token.replace('Bearer ', ''), process.env.SECRET);
     const user = await User.findOne({ _id: data._id })
     if (!user) {
       throw new Error()
