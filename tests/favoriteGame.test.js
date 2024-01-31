@@ -47,28 +47,27 @@ describe('Test the favorite games endpoints', () => {
     test('It should add a game to a user', async () => {
         try {
             const game = await Game.create({ title: 'Test Game', genre: 'Puzzle', platform: 'Xbox', release_year: '2008' })
-    
+
             const user = await User.create({
                 name: 'Test User',
                 email: 'test@example.com',
                 password: 'password123',
                 favoriteGames: []
             })
-    
-            console.log('Created user:', user)
-    
+
+
             user.favoriteGames.push(game)
             await user.save()
-    
+
             const updatedUser = await User.findById(user._id).populate('favoriteGames')
-    
+
             expect(updatedUser.favoriteGames.length).toBe(1)
             expect(updatedUser.favoriteGames[0].title).toBe('Test Game')
             expect(updatedUser.favoriteGames[0].genre).toBe('Puzzle')
             expect(updatedUser.favoriteGames[0].platform).toBe('Xbox')
             expect(updatedUser.favoriteGames[0].release_year).toBe('2008')
         } catch (error) {
-            console.error('Error:', error)
+
         }
     })
 
