@@ -18,6 +18,9 @@ Step 6:
 npm i to install all packages in package.json, then npm run test to test everything 
 
 Step 7:
+then run npm run dev to start server and type http://localhost:3006/ in your browser
+
+Step 8:
 git init then create a repository on git hub then Create a github repository then follow git steps to addremote/add-A/commit to -m/push -u 
 
 
