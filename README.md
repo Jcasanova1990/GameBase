@@ -1,3 +1,10 @@
+                                                                DESCRIPTION
+                This git allows users to add and access games in this database as well as favorite the the games they like in this database.
+
+
+    SETUP INSTRUCTIONS
+
+
 Step 1: 
 Open terminal mkdir then cd into created folder.
 
