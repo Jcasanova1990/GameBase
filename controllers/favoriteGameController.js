@@ -1,4 +1,5 @@
 const FavoriteGame = require('../models/favoriteGames')
+const User = require('../models/users')
 
 
 exports.IndexGames = async (req, res) => {
@@ -25,16 +26,16 @@ exports.addFavoriteGame = async (req, res) => {
     const foundUser = await User.findOne({ _id: req.params.userId })
     if (!foundUser) throw new Error(`Could not locate user with id ${req.params.userId}`)
 
-    const newFavoriteGame = new FavoriteGame(req.body)
-    await newFavoriteGame.save()
+    const foundGame = await FavoriteGame.findOne({ _id: req.params.favoriteGameId })
+    if (!foundGame) throw new Error(`Could not locate user with id ${req.params.favoriteGameId}`)
 
-    foundUser.favoriteGames.push(newFavoriteGame._id)
+    foundUser.favoriteGames.push(foundGame._id)
     await foundUser.save()
 
     res.status(200).json({
       msg: `Successfully added favorite game for user with id ${req.params.userId}`,
       user: foundUser,
-      favoriteGame: newFavoriteGame
+      favoriteGame: foundGame
     })
   } catch (error) {
     res.status(400).json({ msg: error.message })
